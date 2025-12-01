@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Camcookie Books - Home</title>
+  <link rel="icon" type="image/png" href="https://camcookieb.github.io/logo.png">
+  <style>
+    body {
+      font-family: serif;
+      background: #fff;
+      color: #0099ff;
+      margin: 0;
+      padding: 0;
+    }
+    .content {
+      width: 99%;
+      border: solid #0099ff;
+      border-radius: 10px;
+      padding: 1px;
+      margin: 10px auto;
+    }
+    .header {
+      color: #0099ff;
+    }
+    .Topbar {
+      width: 100%;
+      height: 50px;
+      background-color: #0099ff;
+      color: #fff;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+.nav {
+  display: flex;
+  align-items: center;   /* vertical centering */
+  justify-content: space-between; /* links left, button right */
+  height: 100%;
+  padding: 0 10px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* spacing between links */
+}
+/* Base link style */
+.Topbarlink {
+  color: #fff;                 /* white text for contrast */
+  text-decoration: none;       /* remove underline */
+  font-weight: 600;            /* slightly bold */
+  padding: 8px 12px;           /* breathing room around text */
+  border-radius: 4px;          /* subtle rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.Topbarlink:hover {
+  background-color: #fff;      /* invert background */
+  color: #0099ff;              /* brand blue text */
+}
+
+/* Active (clicked) state */
+.Topbarlink:active {
+  background-color: #e6e6e6;   /* soft gray highlight */
+  color: #0066cc;              /* darker blue */
+}
+
+/* Optional: focus for accessibility */
+.Topbarlink:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.menu-btn {
+  display: none;               /* hidden by default, shown in mobile view */
+  font-size: 2rem;             /* large enough for easy tapping */
+  cursor: pointer;
+  margin-left: auto;           /* push to far right in flex layout */
+  color: #fff;                 /* white icon on blue Topbar */
+  padding: 4px 8px;            /* clickable area */
+  border-radius: 4px;          /* subtle rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.menu-btn:hover {
+  background-color: #fff;      /* invert background */
+  color: #0099ff;              /* brand blue icon */
+}
+
+/* Active (clicked) state */
+.menu-btn:active {
+  background-color: #e6e6e6;   /* soft gray highlight */
+  color: #0066cc;              /* darker blue */
+}
+
+/* Optional: focus for accessibility */
+.menu-btn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+    /* Search bar */
+    .search-bar {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+    .search-bar input[type="text"] {
+      padding: 5px;
+      border: none;
+      border-radius: 4px;
+    }
+    .search-bar button {
+      padding: 5px 10px;
+      margin-left: 5px;
+      border: none;
+      border-radius: 4px;
+      background-color: #fff;
+      color: #0099ff;
+      cursor: pointer;
+    }
+    .search-bar button:hover {
+      background-color: #e6e6e6;
+    }
+    /* Fullscreen overlay */
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      background-color: #0099ff;
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+    }
+.overlay-content a {
+  display: block;
+  font-size: 1.5rem;
+  color: #fff;                 /* white text on blue background */
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.overlay-content a:hover {
+  background-color: #fff;      /* invert background */
+  color: #0099ff;              /* brand blue text */
+}
+
+/* Active (clicked) state */
+.overlay-content a:active {
+  background-color: #e6e6e6;   /* soft gray highlight */
+  color: #0066cc;              /* darker blue */
+}
+
+/* Optional: focus for accessibility */
+.overlay-content a:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 3rem;
+  color: #fff;                 /* white by default */
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 4px 8px;            /* small clickable area */
+}
+
+/* Hover effect */
+.closebtn:hover {
+  background-color: #fff;      /* invert background */
+  color: #0099ff;              /* brand blue text */
+}
+
+/* Active (clicked) state */
+.closebtn:active {
+  background-color: #e6e6e6;   /* soft gray highlight */
+  color: #0066cc;              /* darker blue */
+}
+
+/* Optional: focus for accessibility */
+.closebtn:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+    @media screen and (max-width: 700px) {
+      .Topbarlink {
+        display: none;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .search-bar {
+        display: none;
+      }
+    }
+    /* Fullscreen noscript */
+    .noscript-message {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0099ff;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: serif;
+      font-size: 1.5rem;
+      z-index: 3000;
+    }
+  </style>
+</head>
+<body>
+<noscript>
+  <div class="noscript-message">
+    <p>⚠️ JavaScript is disabled. Please enable it for the full Camcookie experience.</p>
+  </div>
+</noscript>
+
+<div class="Topbar">
+  <nav class="nav">
+    <div class="nav-links">
+      <a class="Topbarlink" href="https://camcookieb.github.io">Home</a>
+    </div>
+    <div class="search-bar">
+  <form onsubmit="event.preventDefault(); 
+    var q = this.query.value.trim(); 
+    if(q) window.location.href='https://camcookieb.github.io/search/' + encodeURIComponent(q);">
+    <input type="text" name="query" placeholder="Search...">
+    <button type="submit">Go</button>
+  </form>
+</div>
+    <span class="menu-btn" onclick="openMenu()">☰</span>
+  </nav>
+</div>
+
+
+<center><h1 class="header">Camcookie Books</h1></center>
+<div class="content">
+  <p>Welcome to the Camcookie Books.</p>
+</div>
+<p>Copyright 2025 by Camcookie Books</p>
+
+<div id="menuOverlay" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">×</a>
+  <div class="overlay-content">
+    <a href="https://camcookieb.github.io/">Home</a>
+    <a href="https://camcookieb.github.io/search">Search</a>
+  </div>
+</div>
+
+<script>
+function openMenu() {
+  document.getElementById("menuOverlay").style.width = "100%";
+}
+function closeMenu() {
+  document.getElementById("menuOverlay").style.width = "0";
+}
+</script>
+</body>
+</html>
