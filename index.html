@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Camcookie Books - Redirecting...</title>
-    <meta http-equiv="refresh" content="3;url=https://camcookieb.github.io/books/">
-    <style>
-        body {
-            font-family: Arial;
-    width: 300px;
-    height: 150px;
-    background: repeating-linear-gradient(
-        45deg,
-        #0099ff,
-        #0099ff 20px,
-        #f99900 20px,
-        #f99900 40px
-    );
-    background-size: 40px 40px;
-    animation: moveStripes 1s linear infinite;
-}
+  <meta charset="UTF-8">
+  <title>Camcookie Books</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
 
-@keyframes moveStripes {
-    from { background-position: 0 0; }
-    to   { background-position: 40px 0; }
-}
-    </style>
+  <!-- Supabase JS -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
-<div class="warning-stripes"></div>
-    <h1>You are being redirected...</h1>
-    <p>If you are not redirected automatically, <a href="https://camcookieb.github.io/books/">click here</a>.</p>
+  <header>
+    <div class="brand">Camcookie Books</div>
+    <nav>
+      <a href="/" data-link>Home</a>
+      <a href="/stories" data-link>Stories</a>
+      <a href="/collections" data-link>Collections</a>
+      <a href="/explore" data-link>Explore</a>
+      <a href="/profile" data-link>My Profile</a>
+    </nav>
+    <div id="auth-status"></div>
+  </header>
+
+  <main id="app"></main>
+
+  <footer>
+    <small>Camcookie Books · © 2026</small>
+  </footer>
 </body>
 </html>
