@@ -108,8 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Home", url: "/" },
     { name: "Camcookie", url: "https://camcookie876.github.io/" },
     { name: "Books", url: "/books/" },
-    { name: "Series", url: "/series/" },
-    { name: "Authors", url: "/author/" },
+    { name: "Series", url: "/books/series/" },
+    { name: "Authors", url: "/books/author/" },
     { name: "Github", url: "https://github.com/camcookieb/" }
   ];
 
