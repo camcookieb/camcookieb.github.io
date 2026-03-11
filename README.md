@@ -1,3 +1,2 @@
 # Camcookie Books
-GO TO https://github.com/camcookieb/books/
-Go TO https://camcookieb.github.io/books
+Camcookie Books has moved to the main Camcookie Website at https://camcookie876.github.io/books/
