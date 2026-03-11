@@ -10,8 +10,8 @@ body {
   border: solid #0099ff;
   border-radius: 10px;
   padding: 1px;
-  margin-left: 3px;
-  margin-right: 3px;
+  justify-content: center;
+  align-items: center;
 }
 .header {
   color: #0099ff;
